@@ -4,8 +4,7 @@ const card = document.querySelector("div.card");
 
 const videos = [
   {
-    title: "Formulário Animado com JS puro e CSS Animation | Mayk Brito",
-    duration: "57 min",
+    title: "Quero doar comida",
     thumb: "https://i.ytimg.com/vi/GykTLqODQuU/hqdefault.jpg",
     video_id: "GykTLqODQuU"
   },
@@ -34,8 +33,7 @@ const videos = [
     video_id: "GSqR2i-Pq6o"
   },
   {
-    title:
-      "Como usar Git e Github na prática: Guia para iniciantes | Mayk Brito",
+    title: "Como usar Git e Github na prática: Guia para iniciantes | Mayk Brito",
     duration: "33 min",
     thumb: "https://i.ytimg.com/vi/2alg7MQ6_sI/hqdefault.jpg",
     video_id: "2alg7MQ6_sI"
@@ -54,25 +52,4 @@ videos.map(video => {
 
 card.remove();
 
-// Modal actions
-const modalOverlay = document.querySelector(".modal-overlay");
-const modal = document.querySelector(".modal");
 const cards = [...document.querySelectorAll(".cards .card")];
-
-cards.forEach(card => {
-  card.addEventListener("click", () => {
-    modal.querySelector(
-      "iframe"
-    ).src = `https://www.youtube.com/embed/${card.getAttribute("id")}`;
-    modalOverlay.classList.add("active");
-    modal.classList.add("active");
-    document.querySelector("body").style.overflow = "hidden";
-  });
-});
-
-document.querySelector(".close-modal").addEventListener("click", () => {
-  modalOverlay.classList.remove("active");
-  modal.classList.remove("active");
-  modal.querySelector("iframe").src = ``;
-  document.querySelector("body").style.overflow = "initial";
-});
